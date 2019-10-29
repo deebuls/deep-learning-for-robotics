@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2019-10-29T13:47:59+01:00
+
+====== The Limits and Potentials of Deep Learning for Robotics ======
+Created Dienstag 29 Oktober 2019
+
+Sünderhauf, Niko, Oliver Brock, Walter Scheirer, Raia Hadsell, Dieter Fox, Jürgen Leitner, Ben Upcroft, et al. “The Limits and Potentials of Deep Learning for Robotics.” ArXiv:1804.06557 [Cs], April 18, 2018. http://arxiv.org/abs/1804.06557.
+
+
+* Motivating overview of important research directions to overcome the current limitations, and help fulfill the promising potentials of deep learning in robotics
+* Research Questions:
+	* How much trust can we put in the predictions of a deep learning systems when miscalssifications can have catastrophic consequences?
+	* How can we estimate the uncertainity in a deep network's predictions ?
+	* How can we fuse these predictions with prior knowledge and other sensors in a probabilistic framework ?
+	* How well does deep learning perform in realistic unconstrained open-set scenarios where objects of unknown class and appearances are regularly encountered?
+	* For data-driven learning
+		* How to generate enough high-quality training data?
+		* Do we rely on data solely collected on robots in real world scenario or do we require data augmentation through simulation?
+		* How to ensure policies transfer from simulation to reality or between different robots?
+	* How can the structure, constraints and the physical laws that govern robotic tasks in the real world be leveraged and exploited by a deep learning system?
+* Challenges for Deep Learning in Robotics vision
+	* Difference between Computer vision and robotic vision
+	* Three different categories:
+		* Reasoning challenges
+			* Uncertainity estimation
+			* Open set estimation
+			* Incremental learning
+			* Class-Incremental learning
+			* Active learning
+		* Embodiment challenges
+		* Learning challenges
