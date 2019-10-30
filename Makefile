@@ -1,6 +1,8 @@
 help:
 	@echo ' '
 	@echo 'Makefile to update github pages'
+	@echo 'Usage:'
+	@echo 'make publish'
 	@echo ' '
 zim:
 	@echo 'Zim export to docs'
