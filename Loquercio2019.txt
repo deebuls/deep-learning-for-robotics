@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2019-11-05T17:19:37+01:00
+
+====== Loquercio2019 ======
+Created Dienstag 05 November 2019
+
+Loquercio, Antonio, Mattia Segu, and Davide Scaramuzza. “A General Framework for Uncertainty Estimation in Deep Learning,” n.d., 9.
+
+* Combines both data and model uncertainity for single value unicertianity estimation
+* Can it do multiple value ? Need to check the 2 example of video
