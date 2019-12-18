@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2019-12-18T11:51:26+01:00
+
+====== Evidential Deep Learning to Quantify Classification Uncertainty ======
+Created Mittwoch 18 Dezember 2019
+
+1. ===== Contribution =====
+
+Deep learning methods for classification with standard softmax output provide point estimates, the authors in the paper presents a method which provides a distribution for classification.
+Deep learning models suffer from the problem of estimating/quantifying confidence as they are trained to minimize prediction loss and not prediction confidence.
+The authors of the paper presents a methods of replacing the pointwise prediction of the neural network with a prior distribution (dirichlet). 
+Thus the deep learning model  predicts directly the prior distribution.  This is a different from the Bayesian neural net which models the uncertainity
+ in the model parameters which are used to determine the prediction uncertainty.  
+The major contributions are:
+	1. Method for getting class probability distribution 
+	2. Compared to Bayesian neural network, very lean in computation
+	3. Compared to other methods which require multiple forward pass to calculate the probability this method only requires 1 single forward pass. 
+	4. Can itself determine out of distribution because of the Bayes Risk loss function
+
+===== 3. Detailed Comments =====
+	a. 
+==== Quality: ====
+
+	b. 
+
+==== Clarity: ====
+
+	1. One of the best graphical explanation of a problem, explained the problem using 1 single g
+	2. {{./pasted_image.png}}
+
+==== Originality: ====
+
+==== Significance: ====
+
+===== 5. Confidence Score =====
+
+===== 6. Improvements: =====
+
+===== 7. Whether or not code was submitted, and if so, if it influenced your review? =====

@@ -9,7 +9,7 @@ Sünderhauf, Niko, Oliver Brock, Walter Scheirer, Raia Hadsell, Dieter Fox, Jür
 
 
 * Motivating overview of important research directions to overcome the current limitations, and help fulfill the promising potentials of deep learning in robotics
-* 
+
 
 == Research Questions: ==
 
@@ -22,7 +22,7 @@ Sünderhauf, Niko, Oliver Brock, Walter Scheirer, Raia Hadsell, Dieter Fox, Jür
 		* Do we rely on data solely collected on robots in real world scenario or do we require data augmentation through simulation?
 		* How to ensure policies transfer from simulation to reality or between different robots?
 	* How can the structure, constraints and the physical laws that govern robotic tasks in the real world be leveraged and exploited by a deep learning system?
-* 
+
 
 == Challenges for Deep Learning in Robotics vision ==
 
@@ -44,7 +44,6 @@ Sünderhauf, Niko, Oliver Brock, Walter Scheirer, Raia Hadsell, Dieter Fox, Jür
 			* Reasoning about object and scene semantics
 			* Reasoning about object and scene geometry
 			* Joint reasoning about semantics and geometry
-* 
 
 == Evaluation for deep learning in robotics ==
 
