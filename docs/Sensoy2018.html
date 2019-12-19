@@ -154,9 +154,11 @@ Created Mittwoch 18 Dezember 2019
 
 <p>
 <ol type="1" start="1">
-<li>===== Contribution =====</li>
+<li>===== Contribution  =====</li>
 </ol>
 </p>
+
+<br>
 
 <p>
 Deep learning methods for classification with standard softmax output provide point estimates, the authors in the paper presents a method which provides a distribution for classification.<br>
@@ -164,30 +166,90 @@ Deep learning models suffer from the problem of estimating/quantifying confidenc
 The authors of the paper presents a methods of replacing the pointwise prediction of the neural network with a prior distribution (dirichlet). <br>
 Thus the deep learning model  predicts directly the prior distribution.  This is a different from the Bayesian neural net which models the uncertainity<br>
  in the model parameters which are used to determine the prediction uncertainty.  <br>
-The major contributions are:<br>
+The major contributions according to authors are:<br>
 <ol style='padding-left: 30pt' type="1" start="1">
 <li>Method for getting class probability distribution </li>
-<li>Compared to Bayesian neural network, very lean in computation</li>
-<li>Compared to other methods which require multiple forward pass to calculate the probability this method only requires 1 single forward pass. </li>
-<li>Can itself determine out of distribution because of the Bayes Risk loss function</li>
+<li>The estimated uncertainity based on the class probability is better than other estimation method because of the Bayes Risk loss function </li>
+<li>Can itself determine out of distribution</li>
+<li>Based on the uncertainty can determine adversial attack</li>
 </ol>
 </p>
-
-<h2>3. Detailed Comments</h2>
 
 <p>
-<ol style='padding-left: 30pt' type="a" start="1">
-<li></li>
+According to me the added advantages are:<br>
+<ol style='padding-left: 30pt' type="1" start="1">
+<li>Even though bayesian neural networks can determin uncertainity of netwrok they are currentlyy un deployable because of their massive computation</li>
+<li>On the contrary the proposed method can determine uncertainty with no additional computation and just making the network awars of the out of distribution in training(KL divergence in loss function) and learning it.</li>
+<li>Compared to other methods (dropout, ensemble etc )which require multiple forward pass to calculate the probability this method only requires 1 single forward pass. </li>
 </ol>
 </p>
+
+<br>
+
+<h2>2. Detailed Comments</h2>
+
+<br>
+
+<p>
+<ul>
+<li>Softmax is the standard output of a classification problem.</li>
+<li>Softmax produces point estimate of the prediction, i.e. a value of a multinomial distribution.</li>
+<li>The idea is to replace softmax with relu, which is then interpreted as evidence for the output which is then converted to hyperparameter of a dirichlet distribution.</li>
+<li>So now the network doesnt learn the point but the hyperparameter of a distribution.</li>
+</ul>
+</p>
+
+<p>
+The process of learning hyperparmeter is 
+</p>
+
 <h3>Quality:</h3>
 
 <br>
 
 <p>
-<ol style='padding-left: 30pt' type="a" start="2">
-<li></li>
+<ol type="1" start="1">
+<li>The paper is well written with first formulating softmax, showing its problems </li>
+<li>Then moving towards the concept of DS theory of evidence and explaining the subjective logic</li>
+<li>After which they explain the 3 loss function</li>
+<li>Finally experiments on the 2 problem of OOD and adversial attack comparison with other methods.</li>
 </ol>
+</p>
+
+<p>
+Subjective logic:<br>
+<ul>
+<li>Belief alone doesnt sum up to one but with uncertainty sum up to 1.</li>
+<li>Doubt : How did equation 1 come from the previous equation ?  On substitution the asnwers are correct but how did they think ?</li>
+<li>Doubt: Isnt b_k also equal to p_k just a difference of 1, So dont know</li>
+<li><img src="./Sensoy2018/pasted_image005.png" width="500"></li>
+</ul>
+</p>
+
+<br>
+
+<p>
+Loss function:<br>
+<ul>
+<li>With the Bayes risk loss function  and the 3 proposition its prooved that the loss function will reduce for corect labels and increase for wrong labels.</li>
+<li>Adding the KL divergence with uniform distribution ensures that the evidence for wrong classfied is reduced to zero.</li>
+<li>With this parameter to the loss function the network learns the difference between evidence for a particular </li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>Reimplemented to code in Keras for testing and proper understanding as the code was not well documented.</li>
+</ul>
+</p>
+
+<p>
+<img src="./Sensoy2018/pasted_image002.png"> <img src="./Sensoy2018/pasted_image003.png"><br>
+<img src="./Sensoy2018/pasted_image004.png">
+</p>
+
+<p>
+Equation <img src="./Sensoy2018/pasted_image001.png"> in page 6  is the one which collects the evidence from the wrong labelled ones for comparing it with KL divergence with 1
 </p>
 
 <h3>Clarity:</h3>
@@ -196,29 +258,71 @@ The major contributions are:<br>
 
 <p>
 <ol style='padding-left: 30pt' type="1" start="1">
-<li>One of the best graphical explanation of a problem, explained the problem using 1 single g</li>
-<li><img src="./Sensoy2018/pasted_image.png"></li>
+<li>One of the best graphical explanation of a problem, explained the problem using 1 single graph to explain the impact of the work. Even though I didnt not understand the working of the paper first time, but I could understand the diagram and nunderstand completely what it meant to achieve. </li>
+</ol>
+<div style='padding-left: 420pt'>
+<img src="./Sensoy2018/pasted_image.png">
+</div>
+<ol style='padding-left: 30pt' type="1" start="3">
+<li>Paper is well written lucid easy to understand language. It addressed in Neurips so obviously you need to know many things to understand the technical terms the author is explaining.</li>
 </ol>
 </p>
 
 <h3>Originality:</h3>
 
-<br>
+<p>
+<ol type="1" start="1">
+<li>As per me, never seen any such work. But who knows there are atleast 10,000 learning papers coming every year who can validate. If they got inspiration maybe.</li>
+<li>But its a ground breaking paper which needs to be explored in details </li>
+</ol>
+</p>
 
 <h3>Significance:</h3>
 
 <br>
 
-<h2>5. Confidence Score</h2>
-
-<br>
+<p>
+From my point of view this is highly significant paper as it places the prediction and the uncertainty right at the loss function which is the regulator of what the network should learn. <br>
+By doing so it forces the same network to learn a distribution rather than a value which is super ingenious.<br>
+Other methods for example Gal which reduces the probability but fails to do for the value or Dropout method in which you have to do multiple run. <br>
+Both suffer from run time efficiency or optimizing the wrong values. <br>
+Here both the accuracy and the confidence both are optimized together in 1 loss function.
+</p>
 
 <h2>6. Improvements:</h2>
 
 <br>
 
+<p>
+One of the issues which looks evident is its scalalbility to regression tasks. Since the methodology is rooted in subjective logic we need to rething about the problem.<br>
+<ul>
+<li>1 Probable solution is to map the regression problem as Gaussian distribution with prior as gausian (for mu) ans wishart (for sigma2). Then the model will estimate the mu and evidence req</li>
+</ul>
+</p>
+
 <h2>7. Whether or not code was submitted, and if so, if it influenced your review?</h2>
 
+<br>
+
+<p>
+The code was submitted, which was very useful in understanding the code. Without the code just with the equations it wouldnt have been able to do understand the code at all
+</p>
+
+<p>
+<ol type="1" start="8">
+<li>===== ToDo for Me =====</li>
+</ol>
+</p>
+
+<br>
+
+<p>
+<ul>
+<li>Plot the decision boundary using the toy dataset like here [](<a href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html" title="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html" class="https">https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html</a></li>
+<li>Plotting the loss landscape. Is there any use ? </li>
+<li>Convert for regression problem</li>
+</ul>
+</p>
 
 
 			<br>

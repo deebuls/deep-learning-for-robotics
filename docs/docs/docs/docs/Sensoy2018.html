@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Home</title>
+	<title>Evidential Deep Learning to Quantify Classification Uncertainty</title>
 	<meta name="generator" content="Zim 0.65">
 	<meta name="viewport" content="width=device-width">
 	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
@@ -138,30 +138,86 @@
 	<div class="wrapper">
 		<div id="navigation"> <ul>
 <li><a href="./docs.html" title="docs" class="page">docs</a></li>
-<li><b>Home</b></li>
+<li><a href="./Home.html" title="Home" class="page">Home</a></li>
 <li><a href="./Loquercio2019.html" title="Loquercio2019" class="page">Loquercio2019</a></li>
 <li><a href="./ReviewTemplate.html" title="ReviewTemplate" class="page">ReviewTemplate</a></li>
-<li><a href="./Sensoy2018.html" title="Sensoy2018" class="page">Sensoy2018</a></li>
+<li><b>Sensoy2018</b></li>
 <li><a href="./Sünderhauf2018.html" title="Sünderhauf2018" class="page">Sünderhauf2018</a></li>
 </ul>
  </div>
 		<div id="content">
-			<h1>Home <a name='Home'></a></h1>
+			<h1>Evidential Deep Learning to Quantify Classification Uncertainty <a name='Sensoy2018'></a></h1>
 
 			<p>
-Created Dienstag 29 Oktober 2019
+Created Mittwoch 18 Dezember 2019
 </p>
-
-<br>
-<br>
 
 <p>
 <ol type="1" start="1">
-<li>Sünderhauf, N. et al. The Limits and Potentials of Deep Learning for Robotics. arXiv:1804.06557 [cs] (2018).  [<a href="./Sünderhauf2018.html" title="Sünderhauf2018" class="page">Sünderhauf2018</a>]</li>
+<li>===== Contribution =====</li>
 </ol>
 </p>
 
+<p>
+Deep learning methods for classification with standard softmax output provide point estimates, the authors in the paper presents a method which provides a distribution for classification.<br>
+Deep learning models suffer from the problem of estimating/quantifying confidence as they are trained to minimize prediction loss and not prediction confidence.<br>
+The authors of the paper presents a methods of replacing the pointwise prediction of the neural network with a prior distribution (dirichlet). <br>
+Thus the deep learning model  predicts directly the prior distribution.  This is a different from the Bayesian neural net which models the uncertainity<br>
+ in the model parameters which are used to determine the prediction uncertainty.  <br>
+The major contributions are:<br>
+<ol style='padding-left: 30pt' type="1" start="1">
+<li>Method for getting class probability distribution </li>
+<li>Compared to Bayesian neural network, very lean in computation</li>
+<li>Compared to other methods which require multiple forward pass to calculate the probability this method only requires 1 single forward pass. </li>
+<li>Can itself determine out of distribution because of the Bayes Risk loss function</li>
+</ol>
+</p>
+
+<h2>3. Detailed Comments</h2>
+
+<p>
+<ol style='padding-left: 30pt' type="a" start="1">
+<li></li>
+</ol>
+</p>
+<h3>Quality:</h3>
+
 <br>
+
+<p>
+<ol style='padding-left: 30pt' type="a" start="2">
+<li></li>
+</ol>
+</p>
+
+<h3>Clarity:</h3>
+
+<br>
+
+<p>
+<ol style='padding-left: 30pt' type="1" start="1">
+<li>One of the best graphical explanation of a problem, explained the problem using 1 single g</li>
+<li><img src="./Sensoy2018/pasted_image.png"></li>
+</ol>
+</p>
+
+<h3>Originality:</h3>
+
+<br>
+
+<h3>Significance:</h3>
+
+<br>
+
+<h2>5. Confidence Score</h2>
+
+<br>
+
+<h2>6. Improvements:</h2>
+
+<br>
+
+<h2>7. Whether or not code was submitted, and if so, if it influenced your review?</h2>
 
 
 
