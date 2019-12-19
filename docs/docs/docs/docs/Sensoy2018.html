@@ -152,9 +152,11 @@
 Created Mittwoch 18 Dezember 2019
 </p>
 
+<br>
+
 <p>
 <ol type="1" start="1">
-<li>===== Contribution  =====</li>
+<li>===== Contribution =====</li>
 </ol>
 </p>
 
@@ -184,9 +186,15 @@ According to me the added advantages are:<br>
 </ol>
 </p>
 
-<br>
+<p>
+Its very rare to see title with uncertainty "<b>quantification"</b> mostly the papers in the field name themselves  as uncertainty "<b>estimation" . </b> The authors might have thought over the name; myself I agree on the title but will need some proof why its "quantification" and not estimation.
+</p>
 
-<h2>2. Detailed Comments</h2>
+<p>
+<ol type="1" start="2">
+<li>===== Detailed Comments =====</li>
+</ol>
+</p>
 
 <br>
 
@@ -244,7 +252,7 @@ Loss function:<br>
 </p>
 
 <p>
-<img src="./Sensoy2018/pasted_image002.png"> <img src="./Sensoy2018/pasted_image003.png"><br>
+<img src="./Sensoy2018/pasted_image002.png" width="500"> <img src="./Sensoy2018/pasted_image003.png" width="300"><br>
 <img src="./Sensoy2018/pasted_image004.png">
 </p>
 
@@ -260,9 +268,7 @@ Equation <img src="./Sensoy2018/pasted_image001.png"> in page 6  is the one whic
 <ol style='padding-left: 30pt' type="1" start="1">
 <li>One of the best graphical explanation of a problem, explained the problem using 1 single graph to explain the impact of the work. Even though I didnt not understand the working of the paper first time, but I could understand the diagram and nunderstand completely what it meant to achieve. </li>
 </ol>
-<div style='padding-left: 420pt'>
-<img src="./Sensoy2018/pasted_image.png">
-</div>
+<img src="./Sensoy2018/pasted_image.png" width="1000"><br>
 <ol style='padding-left: 30pt' type="1" start="3">
 <li>Paper is well written lucid easy to understand language. It addressed in Neurips so obviously you need to know many things to understand the technical terms the author is explaining.</li>
 </ol>
@@ -282,11 +288,13 @@ Equation <img src="./Sensoy2018/pasted_image001.png"> in page 6  is the one whic
 <br>
 
 <p>
-From my point of view this is highly significant paper as it places the prediction and the uncertainty right at the loss function which is the regulator of what the network should learn. <br>
-By doing so it forces the same network to learn a distribution rather than a value which is super ingenious.<br>
-Other methods for example Gal which reduces the probability but fails to do for the value or Dropout method in which you have to do multiple run. <br>
-Both suffer from run time efficiency or optimizing the wrong values. <br>
-Here both the accuracy and the confidence both are optimized together in 1 loss function.
+<ul>
+<li>From my point of view this is highly significant paper as it places the prediction and the uncertainty right at the loss function which is the regulator of what the network should learn. </li>
+<li>By doing so it forces the same network to learn a distribution rather than a value which is super ingenious.</li>
+<li>Other methods for example Gal which reduces the probability but fails to do for the value or Dropout method in which you have to do multiple run. </li>
+<li>Both suffer from run time efficiency or optimizing the wrong values. </li>
+<li>Here both the accuracy and the confidence both are optimized together in 1 loss function.</li>
+</ul>
 </p>
 
 <h2>6. Improvements:</h2>
@@ -294,9 +302,12 @@ Here both the accuracy and the confidence both are optimized together in 1 loss 
 <br>
 
 <p>
-One of the issues which looks evident is its scalalbility to regression tasks. Since the methodology is rooted in subjective logic we need to rething about the problem.<br>
 <ul>
-<li>1 Probable solution is to map the regression problem as Gaussian distribution with prior as gausian (for mu) ans wishart (for sigma2). Then the model will estimate the mu and evidence req</li>
+<li>One of the issues which looks evident is its scalalbility to regression tasks. Since the methodology is rooted in subjective logic we need to rething about the problem.
+<ul>
+<li>One Probable solution is to map the regression problem as Gaussian distribution with prior as gausian (for mu) ans wishart (for sigma2). Then the model will estimate the mu and evidence by sigma modeled as wishart</li>
+<li>But need to check if all the 3 propositions are satisfies</li>
+</ul></li>
 </ul>
 </p>
 
@@ -310,7 +321,7 @@ The code was submitted, which was very useful in understanding the code. Without
 
 <p>
 <ol type="1" start="8">
-<li>===== ToDo for Me =====</li>
+<li>===== To Do for me =====</li>
 </ol>
 </p>
 

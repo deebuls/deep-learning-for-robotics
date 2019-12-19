@@ -6,8 +6,7 @@ Creation-Date: 2019-12-18T11:51:26+01:00
 Created Mittwoch 18 Dezember 2019
 
 
-1. ===== Contribution =====
-
+===== Contribution =====
 
 Deep learning methods for classification with standard softmax output provide point estimates, the authors in the paper presents a method which provides a distribution for classification.
 Deep learning models suffer from the problem of estimating/quantifying confidence as they are trained to minimize prediction loss and not prediction confidence.
@@ -27,8 +26,9 @@ According to me the added advantages are:
 
 Its very rare to see title with uncertainty "**quantification"** mostly the papers in the field name themselves  as uncertainty "**estimation" . ** The authors might have thought over the name; myself I agree on the title but will need some proof why its "quantification" and not estimation.
 
-2. ===== Detailed Comments =====
+===== De =====
 
+===== tailed Comments =====
 
 * Softmax is the standard output of a classification problem.
 * Softmax produces point estimate of the prediction, i.e. a value of a multinomial distribution.
