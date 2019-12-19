@@ -5,7 +5,8 @@ Creation-Date: 2019-12-18T11:51:26+01:00
 ====== Evidential Deep Learning to Quantify Classification Uncertainty ======
 Created Mittwoch 18 Dezember 2019
 
-1. ===== Contribution  =====
+
+1. ===== Contribution =====
 
 
 Deep learning methods for classification with standard softmax output provide point estimates, the authors in the paper presents a method which provides a distribution for classification.
@@ -24,8 +25,10 @@ According to me the added advantages are:
 	2. On the contrary the proposed method can determine uncertainty with no additional computation and just making the network awars of the out of distribution in training(KL divergence in loss function) and learning it.
 	3. Compared to other methods (dropout, ensemble etc )which require multiple forward pass to calculate the probability this method only requires 1 single forward pass. 
 
+Its very rare to see title with uncertainty "**quantification"** mostly the papers in the field name themselves  as uncertainty "**estimation" . ** The authors might have thought over the name; myself I agree on the title but will need some proof why its "quantification" and not estimation.
 
-===== 2. Detailed Comments =====
+2. ===== Detailed Comments =====
+
 
 * Softmax is the standard output of a classification problem.
 * Softmax produces point estimate of the prediction, i.e. a value of a multinomial distribution.
@@ -55,7 +58,7 @@ Loss function:
 
 * Reimplemented to code in Keras for testing and proper understanding as the code was not well documented.
 
-{{./pasted_image002.png}} {{./pasted_image003.png}}
+{{./pasted_image002.png?width=500}} {{./pasted_image003.png?width=300}}
 {{./pasted_image004.png}}
 
 Equation {{./pasted_image001.png}} in page 6  is the one which collects the evidence from the wrong labelled ones for comparing it with KL divergence with 1
@@ -63,7 +66,7 @@ Equation {{./pasted_image001.png}} in page 6  is the one which collects the evid
 ==== Clarity: ====
 
 	1. One of the best graphical explanation of a problem, explained the problem using 1 single graph to explain the impact of the work. Even though I didnt not understand the working of the paper first time, but I could understand the diagram and nunderstand completely what it meant to achieve. 
-														{{./pasted_image.png}}
+{{./pasted_image.png?width=1000}}
 	3. Paper is well written lucid easy to understand language. It addressed in Neurips so obviously you need to know many things to understand the technical terms the author is explaining.
 
 ==== Originality: ====
@@ -72,22 +75,23 @@ Equation {{./pasted_image001.png}} in page 6  is the one which collects the evid
 
 ==== Significance: ====
 
-From my point of view this is highly significant paper as it places the prediction and the uncertainty right at the loss function which is the regulator of what the network should learn. 
-By doing so it forces the same network to learn a distribution rather than a value which is super ingenious.
-Other methods for example Gal which reduces the probability but fails to do for the value or Dropout method in which you have to do multiple run. 
-Both suffer from run time efficiency or optimizing the wrong values. 
-Here both the accuracy and the confidence both are optimized together in 1 loss function.
+* From my point of view this is highly significant paper as it places the prediction and the uncertainty right at the loss function which is the regulator of what the network should learn. 
+* By doing so it forces the same network to learn a distribution rather than a value which is super ingenious.
+* Other methods for example Gal which reduces the probability but fails to do for the value or Dropout method in which you have to do multiple run. 
+* Both suffer from run time efficiency or optimizing the wrong values. 
+* Here both the accuracy and the confidence both are optimized together in 1 loss function.
 
 ===== 6. Improvements: =====
 
-One of the issues which looks evident is its scalalbility to regression tasks. Since the methodology is rooted in subjective logic we need to rething about the problem.
-* 1 Probable solution is to map the regression problem as Gaussian distribution with prior as gausian (for mu) ans wishart (for sigma2). Then the model will estimate the mu and evidence req
+* One of the issues which looks evident is its scalalbility to regression tasks. Since the methodology is rooted in subjective logic we need to rething about the problem.
+	* One Probable solution is to map the regression problem as Gaussian distribution with prior as gausian (for mu) ans wishart (for sigma2). Then the model will estimate the mu and evidence by sigma modeled as wishart
+	* But need to check if all the 3 propositions are satisfies
 
 ===== 7. Whether or not code was submitted, and if so, if it influenced your review? =====
 
 The code was submitted, which was very useful in understanding the code. Without the code just with the equations it wouldnt have been able to do understand the code at all
 
-8. ===== ToDo for Me =====
+8. ===== To Do for me =====
 
 
 * Plot the decision boundary using the toy dataset like here [](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
