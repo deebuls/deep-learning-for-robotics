@@ -81,18 +81,17 @@ Equation {{./pasted_image001.png}} in page 6  is the one which collects the evid
 * Both suffer from run time efficiency or optimizing the wrong values. 
 * Here both the accuracy and the confidence both are optimized together in 1 loss function.
 
-===== 6. Improvements: =====
+===== Improvements: =====
 
 * One of the issues which looks evident is its scalalbility to regression tasks. Since the methodology is rooted in subjective logic we need to rething about the problem.
 	* One Probable solution is to map the regression problem as Gaussian distribution with prior as gausian (for mu) ans wishart (for sigma2). Then the model will estimate the mu and evidence by sigma modeled as wishart
 	* But need to check if all the 3 propositions are satisfies
 
-===== 7. Whether or not code was submitted, and if so, if it influenced your review? =====
+===== Whether or not code was submitted, and if so, if it influenced your review? =====
 
 The code was submitted, which was very useful in understanding the code. Without the code just with the equations it wouldnt have been able to do understand the code at all
 
-8. ===== To Do for me =====
-
+===== To Do for me =====
 
 * Plot the decision boundary using the toy dataset like here [](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
 * Plotting the loss landscape. Is there any use ? 
