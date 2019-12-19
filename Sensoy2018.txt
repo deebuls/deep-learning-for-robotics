@@ -26,9 +26,7 @@ According to me the added advantages are:
 
 Its very rare to see title with uncertainty "**quantification"** mostly the papers in the field name themselves  as uncertainty "**estimation" . ** The authors might have thought over the name; myself I agree on the title but will need some proof why its "quantification" and not estimation.
 
-===== De =====
-
-===== tailed Comments =====
+===== Detailed Comments =====
 
 * Softmax is the standard output of a classification problem.
 * Softmax produces point estimate of the prediction, i.e. a value of a multinomial distribution.
@@ -44,18 +42,17 @@ The process of learning hyperparmeter is
 3. After which they explain the 3 loss function
 4. Finally experiments on the 2 problem of OOD and adversial attack comparison with other methods.
 
-Subjective logic:
+== Subjective logic: ==
 * Belief alone doesnt sum up to one but with uncertainty sum up to 1.
 * Doubt : How did equation 1 come from the previous equation ?  On substitution the asnwers are correct but how did they think ?
 * Doubt: Isnt b_k also equal to p_k just a difference of 1, So dont know
 * {{./pasted_image005.png?width=500}}
 
 
-Loss function:
+== Loss function: ==
 * With the Bayes risk loss function  and the 3 proposition its prooved that the loss function will reduce for corect labels and increase for wrong labels.
 * Adding the KL divergence with uniform distribution ensures that the evidence for wrong classfied is reduced to zero.
 * With this parameter to the loss function the network learns the difference between evidence for a particular 
-
 * Reimplemented to code in Keras for testing and proper understanding as the code was not well documented.
 
 {{./pasted_image002.png?width=500}} {{./pasted_image003.png?width=300}}
